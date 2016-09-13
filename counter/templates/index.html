@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+    <title>Counter assignment</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <H1>Counter</H1>
+    <p>You have visited this page: {{session['counter']}} times</p>
+     <form action='/increment' method='post'>
+        <button>I'm a Ninja</button>
+    </form>
+    <form action='/clear' method='post'>
+        <button>Hacker Status</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Registration" content="registration form stuff, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GO REGISTER</title>
+</head>
+<body>
+  <h1>Registration Form</h1>
+  {% with errors = get_flashed_messages(category_filter=["error"]) %}
+  {% if errors %}
+  <div class="alert-message block-message error">
+    <ul>
+      {%- for msg in errors %}
+      <li>{{ msg }}</li>
+      {% endfor -%}
+    </ul>
+  </div>
+  {% endif %}
+  {% endwith %}
+  <form action='/process' method="POST">
+    Email: <input type = "text" name = "emailaddress">
+    First Name: <input type = "text" name = "first_name">
+    Last Name: <input type = "text" name = "last_name">
+    Password: <input type = "password" name = "password">
+    Confirm Password: <input type = "password" name ="confirmpassword">
+    <input type = "submit" name="submit">
+    </form>
+    <form action='/reset' method='post'>
+      <a href="/reset"><button type="button" name="button">Reset Form</button></a>
+  </form>
+</body>
+</html>

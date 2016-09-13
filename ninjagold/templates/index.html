@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NinjaGold</title>
+</head>
+<body>
+  <div id = "container">
+    <h2>Your Gold: {{session['total']}}</h2>
+    <form action="/reset" method = "post">
+      <input type = "submit" name="submit" value="reset">
+    </form>
+    <div class = "location">
+        <h2>Farm</h2>
+        <p>(Earns 10-20 gold)</p>
+        <form action="/process_money" method="post">
+          <input type="hidden" name="building" value="farm" />
+          <input type="submit" value="Find Gold!"/>
+        </form>
+    </div>
+    <div class = "location">
+        <h2>Cave</h2>
+        <p>(Earns 10-20 gold)</p>
+        <form action="/process_money" method="post">
+          <input type="hidden" name="building" value="cave" />
+          <input type="submit" value="Find Gold!"/>
+        </form>
+    </div>
+    <div class = "location">
+        <h2>House</h2>
+        <p>(Earns 10-20 gold)</p>
+        <form action="/process_money" method="post">
+          <input type="hidden" name="building" value="house" />
+          <input type="submit" value="Find Gold!"/>
+        </form>
+    </div>
+    <div class = "location">
+        <h2>Casino</h2>
+        <p>(Earns/takes 10-20 gold)</p>
+        <form action="/process_money" method="post">
+          <input type="hidden" name="building" value="casino" />
+          <input type="submit" value="Find Gold!"/>
+        </form>
+    </div>
+    <div class = "activities">
+      <h2>Activities</h2>
+      <textarea name=text rows=10 cols=100> {{session['log']}} </textarea>
+    </div>
+</div>
+</body>
+</html>

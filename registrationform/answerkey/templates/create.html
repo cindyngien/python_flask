@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>HTML5 Contact Form</title>
+   <link rel="stylesheet" media="screen"  href="{{ url_for('static', filename='main.css') }}" >
+</head>
+<body>
+<form class="contact_form" action="/register" method="post" name="contact_form">
+ <ul>
+   <li>
+     <h2>Contact Us</h2>
+     <span class="required_notification">* Denotes Required Field</span>
+   </li>
+   <li>
+     <label for="first_name">First name:</label>
+     <input type="text" name="first_name" placeholder="John" />
+
+     {% with messages = get_flashed_messages() %}
+       {% if messages %}
+       {{messages[0]['first_name']}}
+       {% endif %}
+     {% endwith %}
+   </li>
+   <li>
+     <label for="last_name">Last name:</label>
+     <input type="text" name="last_name" placeholder="Doe" />
+     {% with messages = get_flashed_messages() %}
+       {% if messages %}
+       {{messages[0]['last_name']}}
+       {% endif %}
+     {% endwith %}
+
+   </li>
+   <li>
+     <label for="email">Email:</label>
+     <input type="text" name="email" placeholder="johndoe@something.com"/>
+     <span class="form_hint">Proper format "name@something.com"</span>
+     {% with messages = get_flashed_messages() %}
+       {% if messages %}
+       {{messages[0]['email']}}
+       {% endif %}
+     {% endwith %}
+
+   </li>
+   <li>
+     <label for="password">Password:</label>
+     <input type="text" name="password" placeholder="password"/>
+     {% with messages = get_flashed_messages() %}
+       {% if messages %}
+       {{messages[0]['password']}}
+       {% endif %}
+     {% endwith %}
+
+   </li>
+   <li>
+     <label for="confirm_password">Cofirm Password:</label>
+     <input type="text" name="confirm_password" placeholder="confirm password"/>
+     {% with messages = get_flashed_messages() %}
+       {% if messages %}
+       {{messages[0]['confirm_password']}}
+       {% endif %}
+     {% endwith %}
+
+   </li>
+   <li>
+     <label for="birthday">Birthday:</label>
+     <input type="text" name="birthday" placeholder="MO/DY/YEAR"/>
+     {% with messages = get_flashed_messages() %}
+       {% if messages %}
+       {{messages[0]['birthday']}}
+       {% endif %}
+     {% endwith %}
+
+   </li>
+   <li>
+       <button class="submit" type="submit">Submit Form</button>
+   </li>
+ </ul>
+</form>
+</body>
+</html>
+Privacy Policy Report a mistake? Highlight the content that's wrong first.
+PREVIOUS
